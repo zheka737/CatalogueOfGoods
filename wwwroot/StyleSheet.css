@@ -1,0 +1,39 @@
+﻿body {
+}
+
+.sortButton {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+#tableOfGoods {
+    margin-top: 100px;
+    width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#filterSettings {
+    float: left;
+    margin-left: 10px;
+}
+
+#createEdit {
+    margin-top: 100px;
+    width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#deleteQuestion {
+    margin: auto;
+    margin-top: 100px;
+    width: 1024px;
+    height: 200px;
+    text-align: center;
+    font-size: 16px;
+            
+}

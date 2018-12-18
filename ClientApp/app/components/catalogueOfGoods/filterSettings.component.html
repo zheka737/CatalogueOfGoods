@@ -1,0 +1,27 @@
+﻿<div id="filterSettings" class="panel panel-default">
+    <table class="table">
+        <tr>
+            <td><input type="checkbox" [(ngModel)]="catalogueSettings.nameFilterEnabled" /></td>
+            <td> <label>Name:</label></td>
+            <td><input [(ngModel)]="catalogueSettings.nameFilter" /></td>
+        </tr>
+        <tr>
+            <td> <input type="checkbox" [(ngModel)]="catalogueSettings.colorFilterEnabled" /></td>
+            <td><label>Color:</label></td>
+            <td>
+                <select style="font-size: 16px;" [(ngModel)]="catalogueSettings.colorFilter">
+                    <option *ngFor="let s of allColors" [ngValue]="s.numberOfColor">{{s.color}}</option>
+                </select></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" [(ngModel)]="catalogueSettings.quantityFilterEnabled" /></td>
+            <td><label>Quantity:</label></td>
+            <td><input [(ngModel)]="catalogueSettings.quantityFilter" /></td>
+        </tr>
+
+    </table>
+    
+
+    <button (click)="applyFilter()" class="btn btn-info" >Apply filter</button>
+</div>
+

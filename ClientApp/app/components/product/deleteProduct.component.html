@@ -1,0 +1,9 @@
+﻿
+<div id="deleteQuestion" class="panel panel-default">
+    <pre style="margin: 10px 10px 10px 10px;"> Do you really want delete product: </pre><label>{{product?.name}}</label>
+    <div style="margin: 10px 10px 10px 10px">
+        <button style="margin-right: 20px;" (click)="deleteProduct()" class="btn btn-primary">Yes</button>
+        <button routerLink="/catalogueOfGoods" class="btn btn-secondary">No</button>
+    </div>
+</div>
+

@@ -1,0 +1,38 @@
+﻿<ng-template [ngIf]="showFilterSettings">
+    <filterSettings></filterSettings>
+</ng-template>
+
+
+    <div id="tableOfGoods" class="panel panel-default">
+        <table class="table table-striped">
+
+            <tr>
+                <th><button class="sortButton" (click)="sortByName()">Name</button></th>
+                <th><button class="sortButton" (click)="sortByColor()">Color</button></th>
+                <th><button class="sortButton" (click)="sortByQuantity()">Quantity</button></th>
+                <th></th>
+            </tr>
+            <ng-template [ngIf]="products.length != 0" [ngIfElse]="listIsEmpty">
+                <tr *ngFor="let product of products">
+                    <td>{{product.name}}</td>
+                    <td>{{getColorName(product)}}</td>
+                    <td>{{product.quantity}}</td>
+
+                    <td>
+                        <button class="btn btn-secondary" [routerLink]="['/createEditProduct/', product.productId]">Edit</button>
+                        <button class="btn btn-secondary" [routerLink]="['/deleteProduct/', product.productId]">Delete</button>
+                    </td>
+
+                </tr>
+            </ng-template>
+        </table>
+        <button style="margin: 10px 10px 10px 10px;" routerLink="/createEditProduct" class="btn btn-primary">Create Product</button>
+        <button style="margin: 10px 10px 10px 10px;" type="button" class="btn btn-default" (click)="filterSwitch()">
+            <span class="glyphicon glyphicon-search"></span> {{showFilterSettings?'Hide filter':'Show filter'}}
+        </button>
+    </div>
+
+
+    <ng-template #listIsEmpty>
+        <span class="alert-info">Catalogue of goods is empty. (maybe it is because of filter settings)</span>
+    </ng-template>
